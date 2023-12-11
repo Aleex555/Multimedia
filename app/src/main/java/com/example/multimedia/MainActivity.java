@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -45,15 +46,15 @@ public class MainActivity extends AppCompatActivity {
         btnOpenGallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openSomeActivityForResult(view);
+                    openSomeActivityForResult(view);
             }
         });
     }
 
     public void openSomeActivityForResult(View view) {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/jpg");
-        intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/*");
         someActivityResultLauncher.launch(intent);
     }
+
 }
