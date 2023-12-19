@@ -87,14 +87,20 @@
             Button btnOpenGallery = findViewById(R.id.button);
             Button btnOpenCamera = findViewById(R.id.button2);
             Button btnOpenCamerafullsize = findViewById(R.id.button33);
+
             Button btnOpenReciclerview = findViewById(R.id.button3);
 
             btnOpenReciclerview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    // Crear un Intent para iniciar RecyclerViewActivity
+                    Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
 
+                    // Iniciar la actividad
+                    startActivity(intent);
                 }
             });
+
             btnOpenGallery.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
