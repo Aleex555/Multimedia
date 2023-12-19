@@ -21,7 +21,8 @@
         <!-- Agrega la configuración del FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.multimedia.fileprovider"
+            android:authorities="com.example.
+            .fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
 

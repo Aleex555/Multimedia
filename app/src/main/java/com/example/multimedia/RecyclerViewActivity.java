@@ -21,23 +21,23 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycledview1);
 
-        // Obtener las URIs de las imágenes
+
         List<Uri> imageUris = obtenerImageUris();
 
-        // Configurar el RecyclerView
+
         RecyclerView recyclerView = findViewById(R.id.recyclerView1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Crear e configurar el adaptador con las URIs
+
         CustomAdapter adapter = new CustomAdapter(imageUris);
         recyclerView.setAdapter(adapter);
 
-        // Configurar el OnClickListener para el botón de volver
+
         Button btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cerrar la actividad actual y volver al MainActivity
+
                 finish();
             }
         });
