@@ -111,7 +111,7 @@
             btnOpenCamerafullsize.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    dispatchTakePictureIntent(view);
+                    dispatchTakePictureIntent();
                 }
             });
             btnOpenCamera.setOnClickListener(new View.OnClickListener() {
@@ -149,12 +149,11 @@
         }
 
 
-        private void dispatchTakePictureIntent(View view) {
+        private void dispatchTakePictureIntent() {
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
                 // Create the File where the photo should go
                 File photoFile = null;
-                Log.i("hola","hahahahah");
                 try {
                     photoFile = createImageFile();
                     System.out.println(photoFile);
@@ -173,8 +172,6 @@
 
         private void loadLastPhoto() {
             File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-
-
             File[] files = storageDir.listFiles();
 
             if (files != null && files.length > 0) {
